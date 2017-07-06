@@ -2,13 +2,13 @@
 ################ Dummy Generator Mappings ##############################################
 [
   {
-    'repeat(5, 100)': {
+    'repeat(1, 100)': {
       _id: '{{objectId()}}',
       index: '{{index()}}',
       guid: '{{guid()}}',
       isActive: '{{bool()}}',
       price: '{{floating(1000, 4000, 2, "$0,0.00")}}',
-      picture: 'https://m.media-amazon.com/images/G/01/6pm/landing/2017/shoes/April/Fashion_Sneakers._V531399538_.jpg',
+      picture: 'https://rukminim1.flixcart.com/image/312/312/j1zbf680-1/shoe/c/y/w/tsz105-12-knight-ace-tan-original-imaeruygqugc8h8w.jpeg?q=70',
       color: '{{random("blue", "brown", "green", "black")}}',
       brand: '{{company().toUpperCase()}}',
       reviews: '{{lorem(1, "paragraphs")}}',
@@ -27,3 +27,4 @@
 ####################################################################################################
 
 API URL: https://api.myjson.com/bins/1fhgt3
+https://rukminim1.flixcart.com/image/312/312/j1zbf680-1/shoe/c/y/w/tsz105-12-knight-ace-tan-original-imaeruygqugc8h8w.jpeg?q=70

@@ -1,12 +1,15 @@
 shoeapp.factory("ShoeData",["$http", function ($http) {
-	get_shoe_all_data = function(){
-			$http({
+	var factory = {};
+	factory.get_shoe_all_data = function(){
+			return $http({
 	        method : "GET",
-	        url : "welcome.htm"
-	    }).then(function mySuccess(response) {
-	        return response;
-	    }, function myError(response) {
+	        url : "https://api.myjson.com/bins/op6av"
+	    }).then(function(response) {
+	    	// console.log(response.data);
+	        return response.data;
+	    }, function (response) {
 	        return response;
 	    });
-	}	
+	}
+	return factory;	
 }]);

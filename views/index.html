@@ -6,6 +6,9 @@
 	</title>
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="../js/angular.min.js"></script>
+	<script type="text/javascript" src="../app.js"></script>
+	<script type="text/javascript" src="../controllers/shoeMartCtrl.js"></script>
+	<script type="text/javascript" src="../services/ShoeDataService.js"></script>
 	<style type="text/css">
 		*{
 			margin: 0px;
@@ -18,14 +21,30 @@
 			background-color: #42A5F5;
 			font-size: 18px;
 		}
+
+		#data-list {
+			float: left;
+			padding: 10px;
+			border: 1px solid grey;
+		}
+
 	</style>
 </head>
 <body ng-app="ShoeApp">
 	<header>
 		ShoeKart
 	</header>
-	<div id="main-content">
-		
+	<div id="main-content" ng-controller="shoeMartCtrl">
+		<ul>
+			<li id="data-list" ng-repeat="shoe in shoes_data">
+				<!-- <img src="{{shoe.picture}}" /> -->
+				<!-- {{ shoe.ratings}} -->
+				<span ng-repeat="star in shoe.ratings">
+					☆
+				</span>
+				
+			</li>
+		</ul>
 	</div>
 </body>
 </html>
