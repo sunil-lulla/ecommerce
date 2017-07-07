@@ -5,10 +5,13 @@
 		ShoeKart
 	</title>
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
 	<script type="text/javascript" src="../js/angular.min.js"></script>
 	<script type="text/javascript" src="../app.js"></script>
 	<script type="text/javascript" src="../controllers/shoeMartCtrl.js"></script>
 	<script type="text/javascript" src="../services/ShoeDataService.js"></script>
+
 	<style type="text/css">
 		*{
 			margin: 0px;
@@ -26,6 +29,16 @@
 			float: left;
 			padding: 10px;
 			border: 1px solid grey;
+			list-style-type: none;
+
+		}
+
+		.filled-star {
+			color: #FFB500;
+			/*background-color: red;*/
+		}
+		.unfilled-star {
+			color: grey;
 		}
 
 	</style>
@@ -37,12 +50,13 @@
 	<div id="main-content" ng-controller="shoeMartCtrl">
 		<ul>
 			<li id="data-list" ng-repeat="shoe in shoes_data">
-				<!-- <img src="{{shoe.picture}}" /> -->
-				<!-- {{ shoe.ratings}} -->
-				<span ng-repeat="star in shoe.ratings">
-					☆
+				<img src="{{shoe.picture}}" />
+				<span ng-repeat="star in range(shoe.ratings) track by $index">
+					<i class="fa fa-star-o filled-star" aria-hidden="true"></i>
 				</span>
-				
+				<span ng-repeat="star in range(5-shoe.ratings) track by $index">
+					<i class="fa fa-star-o unfilled-star" aria-hidden="true"></i>
+				</span>
 			</li>
 		</ul>
 	</div>
